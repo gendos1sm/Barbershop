@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Barbershop Ottawa - Barbers</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&family=Playfair+Display:wght@700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <header>
+        <nav class="navbar navbar-expand-lg navbar-dark custom-navbar">
+            <div class="container-fluid">
+                <a class="navbar-brand" href="index.html">
+                    <img src="assets/logo.png" alt="Barber Shop Logo" style="width: 100px;">
+                    Barbershop Ottawa
+                </a>
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="collapse navbar-collapse justify-content-end" id="navbarNav">
+                    <ul class="navbar-nav">
+                        <li class="nav-item">
+                            <a class="nav-link" href="index.html">Home</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link active" href="barbers.html">Barbers</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="services.html">Services</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="contact.html">Contact</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="reviews.html">Reviews</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link btn btn-secondary text-white" href="book.html">Book Now</a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </nav>
+    </header>
+    <main class="container my-5">
+        <h1 class="text-center display-4 mb-5">Barbers</h1>
+        
+        <div class="row row-cols-1 row-cols-md-2 row-cols-lg-3 g-4">
+
+            <div class="col">
+                <div class="card">
+                    <img src="assets/edward.jpg" class="card-img-top" alt="Barber 1">
+                    <div class="card-body">
+                        <h5 class="card-title">Edward Scissorhands</h5>
+                        <p class="card-text">Meet Edward, the sharpest barber in town! Need a trim? He’ll have you looking razor-sharp in no time. 
+                            Just don’t ask for a close shave—you might leave with more than just a haircut!.</p>
+                        <a href="book.html?barber=Edward%20Scissorhands" class="btn btn-secondary">Book Now</a>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col">
+                <div class="card">
+                    <img src="assets/sofie.jpg" class="card-img-top" alt="Barber 2">
+                    <div class="card-body">
+                        <h5 class="card-title">Sofie Smith</h5>
+                        <p class="card-text">Meet Sofie, the queen of cuts at our barbershop! With her precision and flair, she’ll have you looking 
+                            your best in no time. Need a stylish new look or just a trim? Sofie’s got the skills to snip and shape your hair to perfection. 
+                            Sit back, relax, and let Sofie work her magic!.</p>
+                        <a href="book.html?barber=Sofie%20Smith" class="btn btn-secondary">Book Now</a>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col">
+                <div class="card">
+                    <img src="assets/mike.jpg" class="card-img-top" alt="Barber 3">
+                    <div class="card-body">
+                        <h5 class="card-title">Mike Johnson</h5>
+                        <p class="card-text">Meet Mike, the maestro of the barbershop! With his expert hands and keen eye for style, he’ll transform your 
+                            hair into a masterpiece. Step into his chair and get ready to experience the best haircut of your life!.</p>
+                        <a href="book.html?barber=Mike%20Johnson" class="btn btn-secondary">Book Now</a>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </main>
+
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
+</body>
+</html>

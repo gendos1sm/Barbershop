@@ -1,0 +1,172 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Barbershop Ottawa - Book Appointment</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&family=Playfair+Display:wght@700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css">
+    <style>
+        .popup-overlay {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.5);
+            display: none;
+            justify-content: center;
+            align-items: center;
+        }
+        .popup {
+            background: white;
+            padding: 20px;
+            border-radius: 8px;
+            max-width: 500px;
+            width: 100%;
+            text-align: center;
+        }
+        .popup h2 {
+            margin-bottom: 20px;
+        }
+        .popup button {
+            margin-top: 20px;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <nav class="navbar navbar-expand-lg navbar-dark custom-navbar">
+            <div class="container-fluid">
+                <a class="navbar-brand" href="index.html">
+                    <img src="assets/logo.png" alt="Barber Shop Logo" style="width: 100px;">
+                    Barbershop Ottawa
+                </a>
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="collapse navbar-collapse justify-content-end" id="navbarNav">
+                    <ul class="navbar-nav">
+                        <li class="nav-item">
+                            <a class="nav-link" href="index.html">Home</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="barbers.html">Barbers</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="services.html">Services</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="contact.html">Contact</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="reviews.html">Reviews</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link active btn btn-secondary text-white" href="book.html">Book Now</a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </nav>
+    </header>
+    <main class="container my-5">
+        <h1 class="text-center display-4 mb-5">Book an Appointment</h1>
+        <form id="bookingForm">
+            <div class="mb-3">
+                <label for="name" class="form-label">Enter your name:</label>
+                <input type="text" class="form-control" id="name" required>
+            </div>
+            <div class="mb-3">
+                <label for="email" class="form-label">Enter your email:</label>
+                <input type="email" class="form-control" id="email" required>
+            </div>
+            <div class="mb-3">
+                <label for="service" class="form-label">Select your service:</label>
+                <select class="form-select" id="service" required>
+                    <option value="">Choose...</option>
+                    <option value="Classic Shave - $25">Classic Shave - $25</option>
+                    <option value="Deluxe Shave - $35">Deluxe Shave - $35</option>
+                    <option value="Hot Towel Shave - $40">Hot Towel Shave - $40</option>
+                    <option value="Regular Cut - $30">Regular Cut - $30</option>
+                    <option value="Fade - $35">Fade - $35</option>
+                    <option value="Scissor Cut - $40">Scissor Cut - $40</option>
+                    <option value="Beard Trim - $20">Beard Trim - $20</option>
+                    <option value="Beard Shape Up - $25">Beard Shape Up - $25</option>
+                    <option value="Full Beard Service - $30">Full Beard Service - $30</option>
+                    <option value="Facial Cleanse - $35">Facial Cleanse - $35</option>
+                    <option value="Anti-Aging Treatment - $45">Anti-Aging Treatment - $45</option>
+                    <option value="Exfoliating Scrub - $30">Exfoliating Scrub - $30</option>
+                </select>
+            </div>
+            <div class="mb-3">
+                <label for="date" class="form-label">Select date:</label>
+                <input type="date" class="form-control" id="date" required>
+            </div>
+            <div class="mb-3">
+                <label for="barber" class="form-label">Select your barber:</label>
+                <select class="form-select" id="barber" required>
+                    <option value="">Choose...</option>
+                    <option value="Edward Scissorhands">Edward Scissorhands</option>
+                    <option value="Sofie Smith">Sofie Smith</option>
+                    <option value="Mike Johnson">Mike Johnson</option>
+                </select>
+            </div>
+            <button type="submit" class="btn btn-secondary">Book Now</button>
+        </form>
+    </main>
+
+    <div class="popup-overlay" id="popupOverlay">
+        <div class="popup" id="popup">
+            <h2>Appointment Confirmed</h2>
+            <div id="appointmentDetails"></div>
+            <button class="btn btn-secondary" id="closePopup">Book Another Appointment</button>
+        </div>
+    </div>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            const urlParams = new URLSearchParams(window.location.search);
+            const selectedBarber = urlParams.get('barber');
+            if (selectedBarber) {
+                document.getElementById('barber').value = selectedBarber;
+            }
+
+            const form = document.getElementById('bookingForm');
+            const popupOverlay = document.getElementById('popupOverlay');
+            const appointmentDetails = document.getElementById('appointmentDetails');
+            const closePopupButton = document.getElementById('closePopup');
+
+            form.addEventListener('submit', function(event) {
+                event.preventDefault();
+
+                const name = document.getElementById('name').value;
+                const email = document.getElementById('email').value;
+                const service = document.getElementById('service').value;
+                const date = document.getElementById('date').value;
+                const barber = document.getElementById('barber').value;
+
+                appointmentDetails.innerHTML = `
+                    <p><strong>Name:</strong> ${name}</p>
+                    <p><strong>Email:</strong> ${email}</p>
+                    <p><strong>Service:</strong> ${service}</p>
+                    <p><strong>Date:</strong> ${date}</p>
+                    <p><strong>Barber:</strong> ${barber}</p>
+                `;
+
+                popupOverlay.style.display = 'flex';
+            });
+
+            closePopupButton.addEventListener('click', function() {
+                popupOverlay.style.display = 'none';
+                form.reset();
+                window.location.href = 'book.html';
+            });
+        });
+    </script>
+
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
+</body>
+</html>
