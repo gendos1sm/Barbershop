@@ -26,5 +26,5 @@ Welcome to the Barbershop project repository. This project showcases a fully res
 - **Reviews Page**: Form to submit customer reviews with a confirmation popup.
 - **Booking Page**: Form to create a booking.
 
-#### Access website here: [a link](https://gendos1sm.github.io/Barbershop/)
+#### Access website here: [https://gendos1sm.github.io/Barbershop/](https://gendos1sm.github.io/Barbershop/)
 
