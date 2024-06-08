@@ -2,10 +2,8 @@
 
 Welcome to the Barbershop project repository. This project showcases a fully responsive website for a barbershop, built using HTML, CSS, and Bootstrap 5. The website includes features such as booking appointments, viewing barbers and services, and leaving customer reviews.
 
-
 ## Features
 
-- **Responsive Design**: Optimized for all device sizes.
 - **Booking System**: Allows customers to book appointments online.
 - **Barber Profiles**: Detailed profiles for each barber.
 - **Services Page**: Comprehensive list of services offered.
@@ -27,4 +25,6 @@ Welcome to the Barbershop project repository. This project showcases a fully res
 - **Contact Page**: Contact information and Google Maps for location.
 - **Reviews Page**: Form to submit customer reviews with a confirmation popup.
 - **Booking Page**: Form to create a booking.
+
+#### Access website here: [a link](https://gendos1sm.github.io/Barbershop/)
 
